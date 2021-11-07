@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+      }
+      .bg {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        /* background-color: #565456; */
+        background-color: #494849;
+      }
+
+      .bg {
+        /* height: 100%; */
+        width: 100%;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      img {
+        width: 100%;
+      }
+
+      .content {
+        height: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr auto;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+      }
+
+      .content .bg {
+        grid-area: 1 / 1 / 2 / 2;
+        overflow: hidden;
+      }
+
+      .videodiv {
+        position: absolute;
+        width: 100%;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .videodiv video {
+        width: 100%;
+        height: 100%;
+      }
+
+      .content .bar {
+        grid-area: 2 / 1 / 3 / 2;
+      }
+
+      .cardbg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .card {
+        /* background-color: rgba(255, 0, 0, 0.329); */
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: calc(100vw * 573 / 365);
+        height: 100vw;
+
+        transform: translate(-50%, -50%) rotate(-90deg);
+      }
+
+      .card > div {
+          position: absolute;
+          top: 38.5%;
+          left: 7.54%;
+          right: 10%;
+          bottom: 10%;
+          /* background-color: rgba(0, 102, 255, 0.329); */
+
+          font-size: 3.84vw;
+          font-weight: bold;
+          font-family: Roboto;
+          opacity: .7;
+      }
+      .name {
+        margin-top: 2.5%;   
+      }
+      .persid {
+        margin-top: 0.5%;   
+      }
+    </style>
+    <script>
+        const urlSearchParams = new URLSearchParams(window.location.search);
+        const params = Object.fromEntries(urlSearchParams.entries());
+
+        window.onload = () => {
+            if (params.forening)
+                document.getElementById('forening').innerText = params.forening
+            if (params.name)
+                document.getElementById('name').innerText = params.name
+            if (params.id)
+                document.getElementById('id').innerText = params.id
+        }
+    </script>
+  </head>
+  <body>
+    <div class="content">
+      <div class="bg">
+        <div class="videodiv">
+          <video autoplay muted loop>
+            <source src="bg.mp4" />
+          </video>
+          <img class="cardbg" src="card.png" />
+          <div class="card">
+            <div>
+                <div id="forening" class="forening">Föreningen Uppsalaekonomerna</div>
+                <div id="name" class="name">Erik Tille</div>
+                <div id="persid" class="persid">000908-7651</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <img class="bar" src="bar.png" />
+    </div>
+  </body>
+</html>
