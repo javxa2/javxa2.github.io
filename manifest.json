@@ -1,0 +1,12 @@
+{
+  "short_name": "Stud",
+  "name": "Studentkortet",
+  "description": "Studentkortet",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "scope": "/",
+  "icons": [],
+  "shortcuts": []
+}

@@ -1,10 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto"
+    />
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="white" />
+    <title>Studentkortet</title>
+    <meta property="og:title" content="Studentkortet" />
+    <meta property="og:type" content="website" />
     <title>Document</title>
     <style>
       html,
@@ -84,37 +92,36 @@
       }
 
       .card > div {
-          position: absolute;
-          top: 38.5%;
-          left: 7.54%;
-          right: 10%;
-          bottom: 10%;
-          /* background-color: rgba(0, 102, 255, 0.329); */
+        position: absolute;
+        top: 38.5%;
+        left: 7.54%;
+        right: 10%;
+        bottom: 10%;
+        /* background-color: rgba(0, 102, 255, 0.329); */
 
-          font-size: 3.84vw;
-          font-weight: bold;
-          font-family: Roboto;
-          opacity: .7;
+        font-size: 3.84vw;
+        font-weight: bold;
+        font-family: Roboto;
+        opacity: 0.7;
       }
       .name {
-        margin-top: 2.5%;   
+        margin-top: 2.5%;
       }
       .persid {
-        margin-top: 0.5%;   
+        margin-top: 0.5%;
       }
     </style>
     <script>
-        const urlSearchParams = new URLSearchParams(window.location.search);
-        const params = Object.fromEntries(urlSearchParams.entries());
+      const urlSearchParams = new URLSearchParams(window.location.search);
+      const params = Object.fromEntries(urlSearchParams.entries());
 
-        window.onload = () => {
-            if (params.forening)
-                document.getElementById('forening').innerText = params.forening
-            if (params.name)
-                document.getElementById('name').innerText = params.name
-            if (params.id)
-                document.getElementById('persid').innerText = params.id
-        }
+      window.onload = () => {
+        if (params.forening)
+          document.getElementById("forening").innerText = params.forening;
+        if (params.name)
+          document.getElementById("name").innerText = params.name;
+        if (params.id) document.getElementById("persid").innerText = params.id;
+      };
     </script>
   </head>
   <body>
@@ -127,9 +134,11 @@
           <img class="cardbg" src="card.png" />
           <div class="card">
             <div>
-                <div id="forening" class="forening">Föreningen Uppsalaekonomerna</div>
-                <div id="name" class="name">Erik Tille</div>
-                <div id="persid" class="persid">000908-7651</div>
+              <div id="forening" class="forening">
+                Föreningen Uppsalaekonomerna
+              </div>
+              <div id="name" class="name">Erik Tille</div>
+              <div id="persid" class="persid">000908-7651</div>
             </div>
           </div>
         </div>
